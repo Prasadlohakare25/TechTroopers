@@ -13,7 +13,7 @@ Welcome to the collaborative code editor - CodeFuse ! This project allows multip
   
 ## Demo
 
-[![Watch the video](https://imgur.com/a/YSc8NXF)](https://www.youtube.com/watch?v=yIZB7ypqpD0)
+[![Watch the video](https://img.youtube.com/vi/yIZB7ypqpD0/10.jpg)](https://www.youtube.com/watch?v=yIZB7ypqpD0)
 
 
 ## Technologies Used
