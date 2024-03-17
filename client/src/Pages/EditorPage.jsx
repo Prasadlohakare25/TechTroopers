@@ -8,6 +8,7 @@ import Editor from "../Components/Editor";
 import Output from "../Components/Output";
 import ACTIONS from "../Actions";
 import axios from 'axios';
+import Stats from "../Components/Stats";
 function EditorPage() {
    // Create a reference to hold the socket instance.
   const socketRef = useRef();
@@ -18,6 +19,9 @@ function EditorPage() {
   const {roomId} = useParams();
   const [clients, setClients] = useState([]);
   const [input, setInput] = useState("");
+  const [cpu, setCpu] = useState("");
+  const [output, setOutPut] = useState("");
+  const [memo, setMemo]= useState("");
   const API_KEY=import.meta.env.VITE_REACT_APP_API_KEY;
 
   const reactNavigator = useNavigate();
@@ -79,7 +83,7 @@ function EditorPage() {
       
     }
   }, []);
-  const [output, setOutPut] = useState("");
+  
   
   //function to copy room Id
   async function copyRoomId(){
@@ -101,7 +105,9 @@ function EditorPage() {
     try {
         const response = await axios.request(options);
         setOutPut(response.data.output);
-        console.log(response);
+        setCpu(response.data.cpuTime)
+        setMemo(response.data.memory)
+        console.log(response.data.cpuTime);
     } catch (error) {
         toast.error(`${error}`);
         console.error(error);
@@ -184,6 +190,7 @@ const options = {
       </div>
       <div className=" w-[32%] "  >
         <Output output={output}  />
+        <Stats cpu={cpu} memo={memo}  />
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ function Output({output}) {
         <div className=' p-3  pt-5 text-lg  text-white font-bold   ' >
         Output
         </div>
-        <textarea  className=' h-[80vh]  w-[80%] p-2  rounded-lg border  font-sans  text-blue-300 ' disabled={true} value={output} > </textarea>
+        <div  className=' h-[50vh]  w-[80%] p-2  rounded-lg border  font-sans  text-blue-300 ' disabled={true} value={output} > </div>
     </div>
   )
 }
