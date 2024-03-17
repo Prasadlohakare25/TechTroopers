@@ -11,7 +11,7 @@ Welcome to the collaborative code editor - CodeFuse ! This project allows multip
 - Live chat: Users can communicate with each other through an integrated live chat feature, facilitating collaboration and discussion.
 - 
 ## Demo
-[![Watch the video](https://img.youtube.com/vi/yIZB7ypqpD0/0.jpg)](https://www.youtube.com/watch?v=yIZB7ypqpD0)
+[![Watch the video]](https://www.youtube.com/watch?v=yIZB7ypqpD0)
 
 
 ## Technologies Used
