@@ -1,4 +1,4 @@
-# Collaborative Code Editor
+# CodeFuse - Online Collaborative Code Editor
 
 Welcome to the collaborative code editor - CodeFuse ! This project allows multiple users to simultaneously collaborate, edit and run code in real-time with integrated compilaer within a web-based environment. It also shows stats such as CPU run time and Memroy used by the code. 
 
