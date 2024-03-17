@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import Editor from "../Components/Editor";
 import Output from "../Components/Output";
 import ACTIONS from "../Actions";
-
+import axios from 'axios';
 function EditorPage() {
    // Create a reference to hold the socket instance.
   const socketRef = useRef();
@@ -17,6 +17,8 @@ function EditorPage() {
   const location = useLocation();
   const {roomId} = useParams();
   const [clients, setClients] = useState([]);
+  const [input, setInput] = useState("");
+  const API_KEY=import.meta.env.VITE_REACT_APP_API_KEY;
 
   const reactNavigator = useNavigate();
 
@@ -47,7 +49,10 @@ function EditorPage() {
             console.log(`${username} joined the room `);
            }
            setClients(clients);
-           socketRef.current.emit(ACTIONS.SYNC_CODE,{})
+           socketRef.current.emit(ACTIONS.SYNC_CODE, {
+           code: codeRef.current,
+           socketId
+          });
 
 
       });
@@ -74,7 +79,7 @@ function EditorPage() {
       
     }
   }, []);
-  const [output, setOutPut] = useState("YOUR CODE OUTPUT");
+  const [output, setOutPut] = useState("");
   
   //function to copy room Id
   async function copyRoomId(){
@@ -91,7 +96,34 @@ function EditorPage() {
   function leaveRoom(){
     reactNavigator('/');
   }
+
+  async function runcode(){
+    try {
+        const response = await axios.request(options);
+        setOutPut(response.data.output);
+        console.log(response);
+    } catch (error) {
+        toast.error(`${error}`);
+        console.error(error);
+    }
+}
   
+const options = {
+  method: 'POST',
+  url: 'https://online-code-compiler.p.rapidapi.com/v1/',
+  headers: {
+    'content-type': 'application/json',
+    'X-RapidAPI-Key': "88ae05f3b5mshdeea729b822f2c2p1e71f5jsn0753950aaeb7" ,
+    'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
+  },
+  data: {
+    language: 'python3',
+    version: 'latest',
+    code: 'print("Hello, World!");',
+    input: null
+  }
+};
+
   
   if(!location.state){
    return  <Navigate  to='/' />
@@ -129,7 +161,7 @@ function EditorPage() {
           </div>
         </div>
         <div className="flex flex-col justify-center  items-center  gap-2 bg-[#1c1e29] p-[18px]">
-          <button className=" w-[80%]  bg-[#00ff00] p-[5px] text-black font-bold rounded-[10px]   ">
+          <button className=" w-[80%]  bg-[#00ff00] p-[5px] text-black font-bold rounded-[10px]   " onClick={runcode}  >
             RUN
           </button>
           <button className=" w-[80%]  bg-white p-[5px] text-black font-bold rounded-[10px]   " onClick={copyRoomId}  >
@@ -146,11 +178,12 @@ function EditorPage() {
           roomId={roomId} 
         onCodeChange={(code) => {
           codeRef.current = code;
-          setMyCode(code); // Update Mycode state
+          setInput(code); //  code to  run  
+          
       }} />
       </div>
-      <div className=" w-[32%] ">
-        <Output output={output} />
+      <div className=" w-[32%] "  >
+        <Output output={output}  />
       </div>
     </div>
   );

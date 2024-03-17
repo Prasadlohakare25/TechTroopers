@@ -10,7 +10,7 @@ import "E:/My Projects/CodeFuse/client/src/App.css";
 import ACTIONS from '../Actions';
 import { stringify } from 'uuid';
 
-function Editor({socketRef,roomId}) {
+function Editor({socketRef,roomId, onCodeChange}) {
      // Using useRef hook to create a reference
     const editorRef = useRef();
     const [newCode, setNewCode]= useState(' ');
@@ -55,7 +55,8 @@ function Editor({socketRef,roomId}) {
             
             const code =  instance.getValue(); 
             // setNewCode(  (prev)=> prev=instance.getValue());
-           
+            
+            onCodeChange(code); // this will return code to the editor page (child- parent deata transfer)
             
                
             // console.log(newCode);   
@@ -112,4 +113,4 @@ function Editor({socketRef,roomId}) {
   
 }
 
-export default Editor
+export default Editor 
