@@ -51,6 +51,11 @@ Welcome to the collaborative code editor - CodeFuse ! This project allows multip
 
 5. Open your web browser and navigate to `http://localhost:5173` to access the collaborative code editor.
 
+# Note: Create the API key from: 
+https://rapidapi.com/Glavier/api/online-code-compiler
+and edit it in .env file under server
+
+
 ## Contributing
 
 We welcome contributions from the community to enhance the functionality and features of our collaborative code editor. If you'd like to contribute, please follow these steps:
