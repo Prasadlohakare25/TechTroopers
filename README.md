@@ -12,7 +12,8 @@ Welcome to the collaborative code editor - CodeFuse ! This project allows multip
 - 
 ## Demo
 
-[![Alt text](https://img.youtube.com/vi/yIZB7ypqpD0/0.jpg)](https://www.youtube.com/watch?v=yIZB7ypqpD0)
+[![Example video](https://img.youtube.com/vi/yIZB7ypqpD0/0.jpg)](https://www.youtube.com/watch?v=yIZB7ypqpD0)
+
 
 
 ## Technologies Used
