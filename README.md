@@ -1,15 +1,15 @@
 # CodeFuse - Online Collaborative Code Editor
 
-Welcome to the collaborative code editor - CodeFuse ! This project allows multiple users to simultaneously collaborate, edit and run code in real-time with integrated compilaer within a web-based environment. It also shows stats such as CPU run time and Memroy used by the code. 
+Welcome to the collaborative code editor - CodeFuse ! This project allows multiple users to simultaneously collaborate, edit and run code in real-time with integrated compilaer within a web-based environment. It also shows stats such as CPU run time and Memory used by the code. 
 
 ## Features
 
 - Real-time code editing: Changes made by one user are immediately visible to all other users in the same editing session.
 - Syntax highlighting: Code is automatically formatted and color-coded to improve readability and comprehension.
-- User management: The system handles user authentication, joining, and leaving editing sessions seamlessly.
+- User management: The system handles user joining and leaving with editing sessions seamlessly.
 - Persistent editor contents: User contributions are saved persistently, ensuring that no data is lost even after a page refresh.
-- Live chat: Users can communicate with each other through an integrated live chat feature, facilitating collaboration and discussion.
-- 
+
+  
 ## Demo
 
 [![Watch the video](https://img.youtube.com/vi/yIZB7ypqpD0/0.jpg)](https://www.youtube.com/watch?v=yIZB7ypqpD0)
@@ -50,6 +50,13 @@ Welcome to the collaborative code editor - CodeFuse ! This project allows multip
     ```
 
 5. Open your web browser and navigate to `http://localhost:5173` to access the collaborative code editor.
+
+
+
+## Note: Create the API key from: 
+https://rapidapi.com/Glavier/api/online-code-compiler
+and edit it in .env file under server
+
 
 ## Contributing
 
