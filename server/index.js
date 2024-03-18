@@ -4,21 +4,25 @@ const {Server}= require("socket.io")
 const http = require('http');
 const{ACTIONS}= require('../server/Actions')
 const path = require('path');
-
+ 
 const server = http.createServer(app);
 const io= new Server(server);
-const port = 5001;
+
+require('dotenv').config();
+
+const port = process.env.PORT || 5001;   
 
 // app.use(express.static(path.join(__dirname, 'client')));
 
 //middleware
 // Middleware to serve Vite-built files
+  
 app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
 
 // Middleware to handle all other routes
 app.get('*', (req, res) => {
     
-    res.sendFile(path.join("../client/dist", '..', 'client', 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'));
   });
 
 
@@ -35,7 +39,7 @@ app.get('*', (req, res) => {
     }
    });
 
- }
+ } 
 
 
 // Listen for 'connection' event on the 'io' instance, which triggers whenever a new client connects.
@@ -82,7 +86,7 @@ io.on('connection',(socket)=>{
     delete userSocketMap[socket.id];
     socket.leave();
    })
-})
+}) 
 
 // app.get('/', (req, res) => res.send('welcome to the backend of codeFuse!'))
 server.listen(port, () => console.log(`Example app listening on port ${port}!`))
