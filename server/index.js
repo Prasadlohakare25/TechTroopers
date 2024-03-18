@@ -3,10 +3,24 @@ const app = express();
 const {Server}= require("socket.io")
 const http = require('http');
 const{ACTIONS}= require('../server/Actions')
+const path = require('path');
 
 const server = http.createServer(app);
 const io= new Server(server);
 const port = 5001;
+
+// app.use(express.static(path.join(__dirname, 'client')));
+
+//middleware
+// Middleware to serve Vite-built files
+app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
+
+// Middleware to handle all other routes
+app.get('*', (req, res) => {
+    
+    res.sendFile(path.join("../client/dist", '..', 'client', 'dist', 'index.html'));
+  });
+
 
  const userSocketMap={};
 
@@ -70,5 +84,5 @@ io.on('connection',(socket)=>{
    })
 })
 
-app.get('/', (req, res) => res.send('welcome to the backend of codeFuse!'))
+// app.get('/', (req, res) => res.send('welcome to the backend of codeFuse!'))
 server.listen(port, () => console.log(`Example app listening on port ${port}!`))

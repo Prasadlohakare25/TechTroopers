@@ -1,0 +1,18 @@
+{
+  "name": "techtroppers",
+  "version": "1.0.0",
+  "description": "Welcome to the collaborative code editor - CodeFuse ! This project allows multiple users to simultaneously collaborate, edit and run code in real-time with integrated compilaer within a web-based environment. It also shows stats such as CPU run time and Memroy used by the code.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm start --prefix server",
+        "install-client": "cd client && npm install && npm run build && cd ..",
+        "install-server": "cd server && npm install && cd .. ",
+        "heroku-postbuild": "npm run install-client && npm run install-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "socket.io": "^4.7.5"
+  }
+}
