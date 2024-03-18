@@ -8,7 +8,8 @@ const path = require('path');
 const server = http.createServer(app);
 const io= new Server(server);
 
-require('dotenv').config();
+
+
 
 const port = process.env.PORT || 5001;   
 
