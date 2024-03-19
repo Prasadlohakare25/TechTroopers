@@ -6,11 +6,11 @@ const http = require('http');
 const{ACTIONS}= require('../server/Actions')
 const path = require('path');
 
- 
+env.config();
 const server = http.createServer(app);
 const io= new Server(server);
 
-env.config();
+
 
 
 const port = process.env.PORT || 5000;   

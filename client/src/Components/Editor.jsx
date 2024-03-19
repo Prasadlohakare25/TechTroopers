@@ -6,7 +6,7 @@ import 'codemirror/theme/dracula.css';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/addon/edit/closetag';
 import 'codemirror/addon/edit/closebrackets';
-import "E:/My Projects/CodeFuse/client/src/App.css";
+
 import ACTIONS from '../Actions';
 import { stringify } from 'uuid';
 

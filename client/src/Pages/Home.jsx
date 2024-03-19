@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/HomeLogo.jpg";
 import {v4 as uuidV4} from "uuid"
 import toast from "react-hot-toast"
 import { useNavigate } from "react-router-dom";
 
-
-import Button from "../Components/Button";
-
+  import Button from "../Components/Button";
 
 function Home() {
   const [roomId,setRoomId]=useState('');
@@ -53,14 +51,14 @@ function Home() {
     >
       <div
         id="formWrapper"
-        className="bg-[#282a36] p-[20px]  rounded-[10px] w-[400px] max-w-[90%] gap-8 "
+        className="bg-[#282a36] p-[45px]  rounded-[10px] w-[450px] max-w-[90%] gap-8  "
       >
         <div
           className="flex
-            p-3 gap- items-center "
+            p-3 pb-5 gap- items-center justify-center "
         >
-          <img src={logo} className="w-[120px] "></img>
-          <h1 className="m-3 text-[40px] text-[#ffd800]">CodeFuse</h1>
+          <img src={logo} className=" h-13 "></img>
+         
         </div>
         <div id="mainLabel" className="mb-[20px] mt-0 font-bold ">
           {" "}
@@ -108,9 +106,8 @@ function Home() {
       <footer className="fixed bottom-0 m-6 ">
         <h4>
           {" "}
-          Made with ❤️ by &nbsp;
-          <a href="https://github.com/omkarpatil14" className="text-[#FFD800]  hover:text-[#897608] font-bold ">
-             Omkar Patil
+          <a href="https://github.com/omkarpatil14/techtroopers.git" className="text-[#FFD800]  hover:text-[#897608] text-xl ">
+             CodeFuse - TechTroopers
           </a>
         </h4>
       </footer>
