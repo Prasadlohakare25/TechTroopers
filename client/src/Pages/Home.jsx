@@ -51,7 +51,7 @@ function Home() {
     >
       <div
         id="formWrapper"
-        className="bg-[#282a36] p-[45px]  rounded-[10px] w-[450px] max-w-[90%] gap-8  "
+        className="bg-[#282a36] p-[45px]  rounded-[5px] w-[450px] max-w-[90%] gap-8  "
       >
         <div
           className="flex
@@ -73,7 +73,7 @@ function Home() {
             value={roomId}
             onChange={(e)=> setRoomId(e.target.value)}
             onKeyUp={handleInput}
-            className="border border-[#ffd800] rounded-[10px] p-[8px] outline-none mb-[14px] bg-transparent font-bold "
+            className="border border-[#ffd800] rounded-[5px] p-[8px] outline-none mb-[14px] bg-transparent font-bold "
           />
         </div>
         <div id="inputGroup">
@@ -84,13 +84,13 @@ function Home() {
             value={username}
             onKeyUp={handleInput}
             onChange={(e)=>setUsername(e.target.value)}
-            className="border border-[#ffd800] rounded-[10px] p-[8px] outline-none mb-[14px] bg-transparent w-[100%] font-bold "
+            className="border border-[#ffd800] rounded-[5px] p-[8px] outline-none mb-[14px] bg-transparent w-[100%] font-bold "
           />
         </div>
 
         <div className="flex  w-[100%] ">
-          <button className=" w-[100px]  bg-[#ffd800] p-[5px] text-black font-bold rounded-[10px] ml-auto hover:bg-[#897608] " onClick={joinRoom}  >
-            JOIN
+          <button className=" w-[100px]  bg-[#ffd800] p-[5px] text-black font-bold rounded-[5px] ml-auto hover:bg-[#897608] " onClick={joinRoom}  >
+            Join
           </button>
         </div>
         <div className="mt-5">
