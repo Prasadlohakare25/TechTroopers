@@ -1,14 +1,16 @@
 const  express = require('express')
 const app = express();
+const env = require('dotenv');
 const {Server}= require("socket.io")
 const http = require('http');
 const{ACTIONS}= require('../server/Actions')
 const path = require('path');
+
  
 const server = http.createServer(app);
 const io= new Server(server);
 
-require('dotenv').config();
+env.config();
 
 
 const port = process.env.PORT || 5000;   
