@@ -57,7 +57,7 @@ function Editor({socketRef,roomId, onCodeChange}) {
             // setNewCode(  (prev)=> prev=instance.getValue());
             
             onCodeChange(code); // this will return code to the editor page (child- parent deata transfer)
-            
+            console.log(code);
                
             // console.log(newCode);   
             // console.log(code);
@@ -80,7 +80,7 @@ function Editor({socketRef,roomId, onCodeChange}) {
             socketRef.current.on(ACTIONS.CODE_CHANGE,({code})=>{
                 if(code!== null){
                     setNewCode(code);
-                    console.log(code);
+                    
                     editorRef.current.setValue(code);
                 
                     // console.log(editorRef.current.getValue());

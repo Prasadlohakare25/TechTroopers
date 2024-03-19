@@ -18,9 +18,10 @@ function EditorPage() {
   const location = useLocation();
   const {roomId} = useParams();
   const [clients, setClients] = useState([]);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(" ");
   const [cpu, setCpu] = useState("");
-  const [output, setOutPut] = useState("");
+  const [output, setOutPut] = useState(" ");
+  const[lang, setLang]= useState("cpp")
   const [memo, setMemo]= useState("");
   const API_KEY=import.meta.env.VITE_REACT_APP_API_KEY;
 
@@ -104,9 +105,12 @@ function EditorPage() {
   async function runcode(){
     try {
         const response = await axios.request(options);
+
         setOutPut(response.data.output);
         setCpu(response.data.cpuTime)
         setMemo(response.data.memory)
+        console.log(input);
+        console.log(response);
         console.log(response.data.cpuTime);
     } catch (error) {
         toast.error(`${error}`);
@@ -125,7 +129,7 @@ const options = {
   data: {
     language: 'python3',
     version: 'latest',
-    code: 'print("Hello, World!");',
+    code: input,
     input: null
   }
 };
@@ -182,7 +186,9 @@ const options = {
           roomId={roomId} 
         onCodeChange={(code) => {
           codeRef.current = code;
+          
           setInput(code); //  code to  run  
+         
           
       }} />
       </div>
